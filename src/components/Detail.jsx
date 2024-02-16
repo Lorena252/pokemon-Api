@@ -1,28 +1,17 @@
-import {
-  Center,
-  Box,
-  Text
-} from "@chakra-ui/react";
-import { useEffect,useState } from "react";
+import { Center, Box, Text } from "@chakra-ui/react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import usePokemon from "../hooks/usePokemon";
 
 export default function Detail() {
-    const [poke, setPoke] = useState([]);
-
-    let {id} = useParams()
-
-useEffect(() =>{
-    fetch(`https://pokeapi.co/api/v2/berry/${id}`)
-    .then((response) => response.json())
-    .then((data) => setPoke(data));
-
-
-}, [])
+  const { detailPokemon, poke } = usePokemon();
+  let { id } = useParams();
+  useEffect(() => {
+    detailPokemon(id);
+  }, []);
 
   return (
-  
     <>
-
       <Box bg="#1A325D">
         <Center>
           <Box bg="#E2E8F0" m="4">
