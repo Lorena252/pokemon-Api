@@ -3,10 +3,26 @@ import {
   Box,
   Text
 } from "@chakra-ui/react";
+import { useEffect,useState } from "react";
+import { useParams } from "react-router-dom";
 
 export default function Detail() {
+    const [poke, setPoke] = useState([]);
+
+    let {id} = useParams()
+
+useEffect(() =>{
+    fetch(`https://pokeapi.co/api/v2/berry/${id}`)
+    .then((response) => response.json())
+    .then((data) => setPoke(data));
+
+
+}, [])
+
   return (
+  
     <>
+
       <Box bg="#1A325D">
         <Center>
           <Box bg="#E2E8F0" m="4">
@@ -30,7 +46,7 @@ export default function Detail() {
                     borderWidth="2px"
                     borderRadius="lg"
                   >
-                    <Text>Nombre de personaje</Text>
+                    <Text>{poke.name}</Text>
                   </Box>
                 </Center>
               </Box>
