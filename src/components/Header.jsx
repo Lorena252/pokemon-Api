@@ -1,19 +1,11 @@
-import { Text, Center, Box } from "@chakra-ui/react";
+import { Center, Box, Heading } from "@chakra-ui/react";
 
 export default function Header() {
   return (
-    <Box
-      // sx={{
-      //   backgroundImage: `url(https://www.pixelstalk.net/wp-content/uploads/images6/Pokeball-HD-Wallpaper-Free-download.jpg)`,
-      //   backgrounPosition: "center",
-      //   backgroundSize: "cover",
-      //      h:"300px",
-         
-      // }}
-    >
+    <Box bg="black" boxShadow="2xl" mb="5" h="110px">
       <Center>
-        <Text
-        p="4px"
+        <Heading
+          p="4px"
           as="i"
           fontSize="6xl"
           color="#FAF040"
@@ -22,7 +14,7 @@ export default function Header() {
           m="2"
         >
           Pokémon
-        </Text>
+        </Heading>
       </Center>
     </Box>
   );

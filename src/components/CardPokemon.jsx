@@ -31,11 +31,9 @@ export default function CardPokemon({ name, image, id }) {
         <Stack mt="6" spacing="3"></Stack>
       </CardBody>
       <Divider />
-      <CardFooter bg="#B2F5EA">
-        <Center>
+          <Center bg="#B2F5EA">
           <Heading>{name}</Heading>
         </Center>
-      </CardFooter>
     </Card>
   );
 }
