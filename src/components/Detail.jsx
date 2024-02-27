@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import usePokemon from "../hooks/usePokemon";
 
 export default function Detail() {
-  const { detailPokemon, poke } = usePokemon();
+  const { detailPokemon, data } = usePokemon();
   let { id } = useParams();
   useEffect(() => {
     detailPokemon(id);
@@ -12,8 +12,8 @@ export default function Detail() {
 
   return (
     <>
-      {console.log(poke)}
-      <Box bg="#1A325D">
+      {console.log(data)}
+      <Box bgGradient="linear(to-r, gray.300, yellow.400, pink.200)">
         <Center>
           <Box bg="#E2E8F0" m="4">
             <Center>
@@ -38,13 +38,13 @@ export default function Detail() {
                   >
                     <Center>
                       <Text as="em" fontSize="3xl">
-                        {poke.name}
+                        {data.name}
                       </Text>
                     </Center>
 
                     <Center>
                       <Image
-                        src={poke.sprites?.other.home.front_default}
+                        src={data.sprites?.other.home.front_default}
                         alt="pokemon"
                         style={{ width: "200px" }}
                       />
@@ -52,7 +52,7 @@ export default function Detail() {
                     <Box ml="6">
                       <Text as="b">Types:</Text>
                       <ul>
-                        {poke.types?.map((type) => (
+                        {data.types?.map((type) => (
                           <li ml="4" key={type.type.name}>
                             {type.type.name}
                           </li>

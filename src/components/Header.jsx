@@ -3,13 +3,13 @@ import { Text, Center, Box } from "@chakra-ui/react";
 export default function Header() {
   return (
     <Box
-      sx={{
-        backgroundImage: `url(https://www.pixelstalk.net/wp-content/uploads/images6/Pokeball-HD-Wallpaper-Free-download.jpg)`,
-        backgrounPosition: "center",
-        backgroundSize: "cover",
-           h:"300px",
+      // sx={{
+      //   backgroundImage: `url(https://www.pixelstalk.net/wp-content/uploads/images6/Pokeball-HD-Wallpaper-Free-download.jpg)`,
+      //   backgrounPosition: "center",
+      //   backgroundSize: "cover",
+      //      h:"300px",
          
-      }}
+      // }}
     >
       <Center>
         <Text
