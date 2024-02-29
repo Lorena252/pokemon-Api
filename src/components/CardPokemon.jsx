@@ -25,7 +25,8 @@ export default function CardPokemon({ name, image, id }) {
       }}
     >
       <CardBody>
-        <Center mt="4">
+        <Center mt="4" >
+          
           <Image src={image} borderRadius="lg" alt="pokemon" width="200px" />
         </Center>
         <Stack mt="6" spacing="3"></Stack>

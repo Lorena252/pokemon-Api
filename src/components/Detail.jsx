@@ -1,4 +1,4 @@
-import { Center, Box, Text, Image } from "@chakra-ui/react";
+import { Center, Box, Text, Image, Flex } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import usePokemon from "../hooks/usePokemon";
@@ -20,7 +20,7 @@ export default function Detail() {
               <Box
                 m="1"
                 w="430px"
-                h="530px"
+                h="350px"
                 maxW="sm"
                 borderWidth="1px"
                 borderRadius="lg"
@@ -29,35 +29,42 @@ export default function Detail() {
               >
                 <Center>
                   <Box
+                  border='5px inset'
                     bg="#FFFFF0"
                     w="350px"
-                    h="510px"
+                    h="330px"
                     m="2"
                     borderWidth="2px"
                     borderRadius="lg"
-                  >
-                    <Center>
-                      <Text as="em" fontSize="3xl">
-                        {data.name}
-                      </Text>
-                    </Center>
-
+                  >                          
+             <Text as="b" fontSize="xl" pl="6" >{data.name}</Text>              
                     <Center>
                       <Image
-                        src={data.sprites?.other.home.front_default}
+                    border='4px inset'
+                     
+                        src={data.sprites?.other.showdown.front_shiny}
                         alt="pokemon"
-                        style={{ width: "200px" }}
+                      style={{ width: "150px", height:"150px" }}
                       />
                     </Center>
-                    <Box ml="6">
+                    <Box ml="6" >
+                      
                       <Text as="b">Types:</Text>
+                      <Center>
+
                       <ul>
                         {data.types?.map((type) => (
-                          <li ml="4" key={type.type.name}>
+                          <li  key={type.type.name}>
                             {type.type.name}
                           </li>
                         ))}
                       </ul>
+                      </Center>
+                      <Flex>
+                         <Text as="b">Experience:</Text>
+                    <Text ml="2"> {data.base_experience}</Text> 
+                      </Flex>
+                        
                     </Box>
                   </Box>
                 </Center>
